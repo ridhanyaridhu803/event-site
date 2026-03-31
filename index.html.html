@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dance Competition</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #1e3c72, #2a5298);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            width: 400px;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        h1 { color: #2a5298; }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .btn {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background: #2a5298;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .btn:hover { background: #1e3c72; }
+
+        /* POPUP FORM */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-box {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px 0;
+        }
+
+        #msg {
+            color: green;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="card">
+    <img src="https://img.freepik.com/free-vector/group-people-dancing-abstract-lights-background_1048-1324.jpg" alt="Dance">
+
+    <h1>💃 Dance Competition 2026</h1>
+
+    <p>Join us for an exciting dance competition full of energy and talent!</p>
+
+    <p>📅 Date: May 10, 2026</p>
+    <p>📍 Location: Bangalore Auditorium</p>
+    <p>⏰ Time: 6:00 PM</p>
+
+    <!-- BUTTON -->
+    <button class="btn" onclick="openForm()">Register Now</button>
+</div>
+
+<!-- POPUP FORM -->
+<div class="popup" id="popup">
+    <div class="form-box">
+        <h2>Register</h2>
+
+        <form onsubmit="submitForm(event)">
+            <input type="text" placeholder="Your Name" required><br>
+            <input type="email" placeholder="Your Email" required><br>
+            <input type="tel" placeholder="Your Phone" required><br>
+
+            <button class="btn" type="submit">Submit</button>
+            <button class="btn" type="button" onclick="closeForm()">Close</button>
+        </form>
+
+        <p id="msg"></p>
+    </div>
+</div>
+
+<script>
+function openForm() {
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closeForm() {
+    document.getElementById("popup").style.display = "none";
+}
+
+function submitForm(e) {
+    e.preventDefault();
+    document.getElementById("msg").innerHTML = "✅ Registration Successful!";
+}
+</script>
+
+</body>
+</html>
